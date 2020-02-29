@@ -1,1 +1,50 @@
 
+#version 150
+
+uniform float time;
+uniform vec2 mouse;
+uniform vec2 resolution;
+
+out vec4 outputColor;
+
+float frame(){
+ vec2 pos = gl_FragCoord.xy/resolution;
+ if(abs(pos.y-0.5)>abs(mouse.y-0.5)){
+ return 0.;}
+ else{return 1.;}
+}
+
+float flash(){
+if(abs(mouse.y-0.5)<0.03){
+return 2000.;}
+else {return 0.;}
+}
+
+float pattern(float a, float b){
+float angle = 1.3+sin(time/30.)/3.;
+vec2 pos = gl_FragCoord.xy/resolution*(cos(angle)*mat2(2.,0.,0.,2.)+sin(angle)*mat2(0.,-1.,1.,.0))+vec2(0.5,0.5);
+return (tan(pos.x*a*5.))-cos(pos.y*b-1.3*cos(pos.x*sin(time)*5.));
+}
+
+float randTan(float a){
+vec2 pos = gl_FragCoord.xy/resolution;
+return tan(pos.y*5.)/30.;
+}
+
+
+vec3 foreground (){
+vec2 pos = gl_FragCoord.xy/resolution;
+pos.y +=sin(pos.x*10.+sin(time))/30.;
+if(abs(tan(pos.x*3.2+1.6)-3.*cos(pos.y*50.)*tan(pos.y*20.+(time/3.)))>6.+sin(pos.x*200.)){
+return vec3 (0.6+sin(pos.x*3.+pos.y*20.)/10.,0.,0.5+0.1*sin(time*5.));}
+else{
+if(pattern(10.,10.)-pattern(12.,13.)<1.5+cos(pos.y*200.)*sin(pos.x*200.)){
+return  vec3 (0.,0.2,0.)*(0.5+sin(time));
+}
+}
+}
+
+void main() {
+    vec3 colour = (vec3(0.,0.,0.5*abs(sin(time)))+foreground()+vec3(flash()))*frame();
+    outputColor = vec4(colour,1.0);
+}
