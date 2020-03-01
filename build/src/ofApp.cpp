@@ -40,7 +40,6 @@ void ofApp::update() {
     }
     
     // show fps in window title
-    
     std::stringstream strm;
     float fps = floor(ofGetFrameRate());
     strm << "CCi Shaders — FPS: " << fps;
