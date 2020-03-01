@@ -38,6 +38,13 @@ void ofApp::update() {
             i = 0;
         }
     }
+    
+    // show fps in window title
+    
+    std::stringstream strm;
+    float fps = floor(ofGetFrameRate());
+    strm << "CCi Shaders — FPS: " << fps;
+    ofSetWindowTitle(strm.str());
 }
 
 //--------------------------------------------------------------
