@@ -42,6 +42,8 @@
 	<string>10.9</string>
 	<key>NSCameraUsageDescription</key>
 	<string>This app needs to access the camera</string>
+	<key>NSHighResolutionCapable</key>
+	<true/>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>This app needs to access the microphone</string>
 </dict>

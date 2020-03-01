@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 
 void ofApp::setup(){
-    ofSetFrameRate(60); // high frame rates greatly impact performance use either 25 or 60
+    ofSetFrameRate(frameRate); // high frame rates greatly impact performance use either 25 or 60
     
     string shaderPath = "./";
     ofDirectory dir(shaderPath);
@@ -13,8 +13,9 @@ void ofApp::setup(){
     setupWebcam();
     sphere.set(150, 40); // Radius, Resolution
     
-    // plotter.setWindowSize(200);
-    // plotter.addGuideline("sin1", 0.75);
+    plotter.setWindowSize(1000);
+    plotter.addGuideline("min", 0);
+    plotter.addGuideline("max", frameRate);
 }
 
 //--------------------------------------------------------------
@@ -94,7 +95,11 @@ void ofApp::draw(){
         ofDisableDepthTest();
     }
     
-    plotter.draw(0, 0, ofGetWidth(), ofGetHeight());
+    ofPushStyle();
+    ofSetColor(0, 0, 0);
+    ofDrawRectangle(10, 10, 400, 200);
+    plotter.draw(10, 10, 400, 200);
+    ofPopStyle();
 }
 
 //--------------------------------------------------------------
