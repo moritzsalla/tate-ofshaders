@@ -35,3 +35,6 @@ void main()
 - [openFrameworks](https://github.com/openframeworks/openFrameworks)
 - [ofxShader](https://github.com/patriciogonzalezvivo/ofxShader)
 - [ofxMidi](https://github.com/danomatika/ofxMidi)
+
+### Enable retina resolution
+Add **"High Resolution Capable" "YES"** to your **openFrameworks-Info.plist** before you compile
