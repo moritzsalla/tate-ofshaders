@@ -5,6 +5,7 @@
 void ofApp::setup(){
     ofSetFrameRate(24);
     setupWebcam();
+    sphere.set(150, 40); // Radius, Resolution
 }
 
 //--------------------------------------------------------------
@@ -37,6 +38,12 @@ void ofApp::draw(){
         frame.end();
         fbo.begin();
         ofClear(0, 0, 0, 255);
+    } 
+    if(sphereInUse){
+        ofEnableDepthTest();
+        ofBackgroundGradient(ofColor(40), ofColor(0));
+        cam.begin();
+        ofPushMatrix();
     }
 
     shader.begin();
@@ -47,6 +54,9 @@ void ofApp::draw(){
     if(webcamInUse){
         shader.setUniformTexture("tex0", webcam.getTexture(), 1);
         frame.draw(0, 0);
+    } else if(sphereInUse){
+        sphere.draw();
+
     } else {
         ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
     }
@@ -56,14 +66,23 @@ void ofApp::draw(){
     if(webcamInUse) {
         fbo.end();
         fbo.draw(0,0);
+    } else if(sphereInUse){
+        ofPopMatrix();
+        cam.end();
+        ofDisableDepthTest();
     }
 }
   
 //--------------------------------------------------------------
 void ofApp::setShader () {
     string path = std::to_string(i) + "/shader";
+
     if(i == 4) webcamInUse = true;
-    else webcamInUse = false;
+    if(i != 4) webcamInUse = false;
+
+    if (i == 5) sphereInUse = true;
+    if(i != 5) sphereInUse = false;
+
     shader.load(path);
 }
 

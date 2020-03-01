@@ -2,3 +2,5 @@
 .DS_Store
 build/build.xcodeproj/project.xcworkspace/xcuserdata/moritzsalla.xcuserdatad/UserInterfaceState.xcuserstate
 .ycm_extra_conf.py
+*.o
+*.a

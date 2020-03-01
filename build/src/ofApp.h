@@ -25,6 +25,7 @@ class ofApp : public ofBaseApp{
     ofEasyCam cam;
     ofShader shader;
     ofSpherePrimitive sphere;
+    bool sphereInUse = false;
 
     ofVideoGrabber webcam;
     ofFbo fbo;
