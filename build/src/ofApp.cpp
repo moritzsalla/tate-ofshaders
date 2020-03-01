@@ -12,7 +12,7 @@ void ofApp::setup(){
     setupWebcam();
     sphere.set(150, 40); // Radius, Resolution
     
-    shader.load("5/shader");
+    shader.load("9/shader");
 }
 
 //--------------------------------------------------------------
