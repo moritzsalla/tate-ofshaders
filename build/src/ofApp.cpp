@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 
 void ofApp::setup(){
-    ofSetFrameRate(60); // high frame rates greatly impact performance use either 25 or 60
+    ofSetFrameRate(frameRate); // high frame rates greatly impact performance use either 25 or 60
     
     string shaderPath = "./";
     ofDirectory dir(shaderPath);
@@ -13,6 +13,9 @@ void ofApp::setup(){
     setupWebcam();
     sphere.set(150, 40); // Radius, Resolution
     
+    plotter.setWindowSize(1000);
+    plotter.addGuideline("min", 0);
+    plotter.addGuideline("max", frameRate);
 }
 
 //--------------------------------------------------------------
@@ -44,6 +47,8 @@ void ofApp::update() {
     float fps = floor(ofGetFrameRate());
     strm << "CCi Shaders — FPS: " << fps;
     ofSetWindowTitle(strm.str());
+    
+    plotter["FPS"] << fps;
 }
 
 //--------------------------------------------------------------
@@ -89,6 +94,12 @@ void ofApp::draw(){
         cam.end();
         ofDisableDepthTest();
     }
+    
+    ofPushStyle();
+    ofSetColor(0, 0, 0);
+    ofDrawRectangle(10, 10, 400, 200);
+    plotter.draw(10, 10, 400, 200);
+    ofPopStyle();
 }
 
 //--------------------------------------------------------------
@@ -114,7 +125,6 @@ void ofApp::setupWebcam(){
     
     fbo.allocate(camWidth, camHeight);
     frame.allocate(camWidth, camHeight);
-    
 }
 
 //--------------------------------------------------------------
