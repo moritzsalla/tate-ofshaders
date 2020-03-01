@@ -12,7 +12,6 @@ void ofApp::setup(){
     setupWebcam();
     sphere.set(150, 40); // Radius, Resolution
     
-    shader.load("9/shader");
 }
 
 //--------------------------------------------------------------
@@ -20,20 +19,24 @@ void ofApp::update() {
     
     if(webcamInUse) webcam.update();
     
-    //        if (ofGetFrameNum()%100 == 0) {
-    //            shader.unload();
-    //            ofLog() << i;
-    //            setShader();
-    //
-    //            if (!shader.isLoaded()) {
-    //                i = 0;
-    //                setShader();
-    //            }
-    //            if(++i == dirCount) {
-    //                ofLog() << "Resetting i";
-    //                i = 0;
-    //            }
-    //        }
+    // load individual shader. use for testing individual shaders, comment out for production build:
+    // shader.load("9/shader");
+    
+    // cycle all shaders. comment out for testing individual shaders:
+    if (ofGetFrameNum()%100 == 0) {
+        shader.unload();
+        ofLog() << i;
+        setShader();
+        
+        if (!shader.isLoaded()) {
+            i = 0;
+            setShader();
+        }
+        if(++i == dirCount) {
+            ofLog() << "Resetting i";
+            i = 0;
+        }
+    }
 }
 
 //--------------------------------------------------------------
