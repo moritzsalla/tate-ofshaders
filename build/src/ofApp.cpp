@@ -3,6 +3,11 @@
 //--------------------------------------------------------------
 
 void ofApp::setup(){
+    string shaderPath = "./";
+    ofDirectory dir(shaderPath);
+    dir.listDir();
+    dirCount = dir.size();
+
     ofSetFrameRate(24);
     setupWebcam();
     sphere.set(150, 40); // Radius, Resolution
@@ -24,7 +29,10 @@ void ofApp::update() {
             i = 0;
             setShader();
         }
-        i++;
+        if(++i == dirCount) {
+            ofLog() << "Resetting i";
+            i = 0;
+        }
     }
 }
 
@@ -88,8 +96,8 @@ void ofApp::setShader () {
 
 //--------------------------------------------------------------
 void ofApp::setupWebcam(){
-    int camWidth = ofGetWidth();
-    int camHeight = ofGetHeight();
+    camWidth = ofGetWidth();
+    camHeight = ofGetHeight();
 
     webcam.setVerbose(false);
     webcam.initGrabber(camWidth, camHeight);
@@ -131,6 +139,8 @@ void ofApp::mouseReleased(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h){
+    camWidth = w;
+    camHeight = h;
 
 }
 

@@ -9,7 +9,7 @@ Add a screenshot if you have one!
 **File Extensions:**
 
 ```
-Fragement shaders = shader.frag  
+Fragment shaders = shader.frag  
 Vertex shaders = shader.vert
 ```
 

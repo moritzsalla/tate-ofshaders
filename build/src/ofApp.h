@@ -28,11 +28,13 @@ class ofApp : public ofBaseApp{
     bool sphereInUse = false;
 
     ofVideoGrabber webcam;
+    int camWidth;
+    int camHeight;
     ofFbo fbo;
     ofFbo frame;
     void setupWebcam();
     bool webcamInUse = false;
     
     int i = 0; // iterator for for loop
-    int dirCount = 3; // number of directories containing shaders
+    int dirCount; // number of directories containing shaders
 };
