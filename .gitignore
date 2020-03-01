@@ -4,3 +4,5 @@ build/build.xcodeproj/project.xcworkspace/xcuserdata/moritzsalla.xcuserdatad/Use
 *.o
 *.a
 *.swp
+build/bin/build.app/Contents/MacOS/build
+
