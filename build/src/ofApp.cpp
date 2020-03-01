@@ -13,6 +13,8 @@ void ofApp::setup(){
     setupWebcam();
     sphere.set(150, 40); // Radius, Resolution
     
+    // plotter.setWindowSize(200);
+    // plotter.addGuideline("sin1", 0.75);
 }
 
 //--------------------------------------------------------------
@@ -44,6 +46,8 @@ void ofApp::update() {
     float fps = floor(ofGetFrameRate());
     strm << "CCi Shaders — FPS: " << fps;
     ofSetWindowTitle(strm.str());
+    
+    plotter["FPS"] << fps;
 }
 
 //--------------------------------------------------------------
@@ -89,6 +93,8 @@ void ofApp::draw(){
         cam.end();
         ofDisableDepthTest();
     }
+    
+    plotter.draw(0, 0, ofGetWidth(), ofGetHeight());
 }
 
 //--------------------------------------------------------------
@@ -114,7 +120,6 @@ void ofApp::setupWebcam(){
     
     fbo.allocate(camWidth, camHeight);
     frame.allocate(camWidth, camHeight);
-    
 }
 
 //--------------------------------------------------------------

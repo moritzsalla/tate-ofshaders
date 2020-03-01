@@ -329,6 +329,70 @@
 				<key>sourceTree</key>
 				<string>SOURCE_ROOT</string>
 			</dict>
+			<key>3CF3F7DF160ADCF14893E8DB</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.c.h</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxPlotter.h</string>
+				<key>path</key>
+				<string>../../../../Developer/Libs/openFrameworks/addons/ofxPlotter/src/ofxPlotter.h</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
+			<key>8E28FED48F8FCD9C28F8AD2F</key>
+			<dict>
+				<key>children</key>
+				<array>
+					<string>A1085AAFAF53C9A078CB0944</string>
+					<string>3CF3F7DF160ADCF14893E8DB</string>
+				</array>
+				<key>isa</key>
+				<string>PBXGroup</string>
+				<key>name</key>
+				<string>src</string>
+				<key>sourceTree</key>
+				<string>&lt;group&gt;</string>
+			</dict>
+			<key>2F0987A2A43290DF1E511232</key>
+			<dict>
+				<key>children</key>
+				<array>
+					<string>8E28FED48F8FCD9C28F8AD2F</string>
+				</array>
+				<key>isa</key>
+				<string>PBXGroup</string>
+				<key>name</key>
+				<string>ofxPlotter</string>
+				<key>sourceTree</key>
+				<string>&lt;group&gt;</string>
+			</dict>
+			<key>C37F463452DF6532C3735779</key>
+			<dict>
+				<key>fileRef</key>
+				<string>A1085AAFAF53C9A078CB0944</string>
+				<key>isa</key>
+				<string>PBXBuildFile</string>
+			</dict>
+			<key>A1085AAFAF53C9A078CB0944</key>
+			<dict>
+				<key>explicitFileType</key>
+				<string>sourcecode.cpp.cpp</string>
+				<key>fileEncoding</key>
+				<string>4</string>
+				<key>isa</key>
+				<string>PBXFileReference</string>
+				<key>name</key>
+				<string>ofxPlotter.cpp</string>
+				<key>path</key>
+				<string>../../../../Developer/Libs/openFrameworks/addons/ofxPlotter/src/ofxPlotter.cpp</string>
+				<key>sourceTree</key>
+				<string>SOURCE_ROOT</string>
+			</dict>
 			<key>6948EE371B920CB800B5AC1A</key>
 			<dict>
 				<key>children</key>
@@ -499,6 +563,8 @@ fi
 					<array>
 						<string>$(OF_CORE_HEADERS)</string>
 						<string>src</string>
+						<string>src</string>
+						<string>../../../../Developer/Libs/openFrameworks/addons/ofxPlotter/src</string>
 						<string>../../../../Developer/Libs/openFrameworks/addons/ofxShader/src</string>
 						<string>../../../../Developer/Libs/openFrameworks/addons/ofxShader/src/skylight</string>
 					</array>
@@ -543,6 +609,8 @@ fi
 					<array>
 						<string>$(OF_CORE_HEADERS)</string>
 						<string>src</string>
+						<string>src</string>
+						<string>../../../../Developer/Libs/openFrameworks/addons/ofxPlotter/src</string>
 						<string>../../../../Developer/Libs/openFrameworks/addons/ofxShader/src</string>
 						<string>../../../../Developer/Libs/openFrameworks/addons/ofxShader/src/skylight</string>
 					</array>
@@ -580,6 +648,7 @@ fi
 			<dict>
 				<key>children</key>
 				<array>
+					<string>2F0987A2A43290DF1E511232</string>
 					<string>A9E7E4DAD1FE7AFDCA9D29DD</string>
 				</array>
 				<key>isa</key>
@@ -3346,6 +3415,8 @@ fi
 					<array>
 						<string>$(OF_CORE_HEADERS)</string>
 						<string>src</string>
+						<string>src</string>
+						<string>../../../../Developer/Libs/openFrameworks/addons/ofxPlotter/src</string>
 						<string>../../../../Developer/Libs/openFrameworks/addons/ofxShader/src</string>
 						<string>../../../../Developer/Libs/openFrameworks/addons/ofxShader/src/skylight</string>
 					</array>
@@ -3410,6 +3481,8 @@ fi
 					<array>
 						<string>$(OF_CORE_HEADERS)</string>
 						<string>src</string>
+						<string>src</string>
+						<string>../../../../Developer/Libs/openFrameworks/addons/ofxPlotter/src</string>
 						<string>../../../../Developer/Libs/openFrameworks/addons/ofxShader/src</string>
 						<string>../../../../Developer/Libs/openFrameworks/addons/ofxShader/src/skylight</string>
 					</array>
@@ -3438,6 +3511,7 @@ fi
 				<array>
 					<string>E4B69E200A3A1BDC003C02F2</string>
 					<string>E4B69E210A3A1BDC003C02F2</string>
+					<string>C37F463452DF6532C3735779</string>
 					<string>4140E6BC9718A03E4033D7E5</string>
 					<string>D7F34DE207C14FD991A24EB2</string>
 					<string>85544D3EF07A2BD6EC231390</string>
@@ -3543,6 +3617,8 @@ fi
 					<array>
 						<string>$(OF_CORE_HEADERS)</string>
 						<string>src</string>
+						<string>src</string>
+						<string>../../../../Developer/Libs/openFrameworks/addons/ofxPlotter/src</string>
 						<string>../../../../Developer/Libs/openFrameworks/addons/ofxShader/src</string>
 						<string>../../../../Developer/Libs/openFrameworks/addons/ofxShader/src/skylight</string>
 					</array>
@@ -3596,6 +3672,8 @@ fi
 					<array>
 						<string>$(OF_CORE_HEADERS)</string>
 						<string>src</string>
+						<string>src</string>
+						<string>../../../../Developer/Libs/openFrameworks/addons/ofxPlotter/src</string>
 						<string>../../../../Developer/Libs/openFrameworks/addons/ofxShader/src</string>
 						<string>../../../../Developer/Libs/openFrameworks/addons/ofxShader/src/skylight</string>
 					</array>

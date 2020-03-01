@@ -1,6 +1,8 @@
 #pragma once
 #define WEBCAM
+
 #include "ofMain.h"
+#include "ofxPlotter.h"
 
 class ofApp : public ofBaseApp{
     public:
@@ -36,4 +38,6 @@ class ofApp : public ofBaseApp{
     int duration = 10; // number of frames a shader is shown. App FPS set in setup greatly affects this.
     int i = 0; // iterator for for-loop
     int dirCount; // number of directories containing shaders
+    
+    ofxPlotter plotter;
 };
