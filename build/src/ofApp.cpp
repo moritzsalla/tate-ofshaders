@@ -3,12 +3,13 @@
 //--------------------------------------------------------------
 
 void ofApp::setup(){
+    ofSetFrameRate(60); // high frame rates greatly impact performance use either 25 or 60
+    
     string shaderPath = "./";
     ofDirectory dir(shaderPath);
     dir.listDir();
     dirCount = dir.size();
     
-    ofSetFrameRate(60);
     setupWebcam();
     sphere.set(150, 40); // Radius, Resolution
     
@@ -23,7 +24,7 @@ void ofApp::update() {
     // shader.load("9/shader");
     
     // cycle all shaders. comment out for testing individual shaders:
-    if (ofGetFrameNum()%100 == 0) {
+    if (ofGetFrameNum()%duration == 0) {
         shader.unload();
         ofLog() << i;
         setShader();

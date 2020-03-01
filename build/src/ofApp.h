@@ -1,7 +1,5 @@
 #pragma once
-
 #define WEBCAM
-
 #include "ofMain.h"
 
 class ofApp : public ofBaseApp{
@@ -35,6 +33,7 @@ class ofApp : public ofBaseApp{
     void setupWebcam();
     bool webcamInUse = false;
     
-    int i = 0; // iterator for for loop
+    int duration = 10; // number of frames a shader is shown. App FPS set in setup greatly affects this.
+    int i = 0; // iterator for for-loop
     int dirCount; // number of directories containing shaders
 };
