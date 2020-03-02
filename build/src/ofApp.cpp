@@ -22,7 +22,7 @@ void ofApp::setup(){
 void ofApp::update() {
     
     if(webcamInUse) webcam.update();
-    setSingleShader(5);
+    setSingleShader(4);
     
     // cycle all shaders. comment out for testing individual shaders:
 //    if (ofGetFrameNum()%duration == 0) {
