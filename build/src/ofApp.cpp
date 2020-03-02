@@ -14,8 +14,7 @@ void ofApp::setup(){
     sphere.set(150, 40); // Radius, Resolution
     
     plotter.setWindowSize(1000);
-    plotter.addGuideline("min", 0);
-    plotter.addGuideline("max", frameRate);
+    
 }
 
 //--------------------------------------------------------------
@@ -94,9 +93,12 @@ void ofApp::draw(){
     }
     
     ofPushStyle();
-    ofSetColor(0, 0, 0);
-    ofDrawRectangle(10, 10, 400, 200);
-    plotter.draw(10, 10, 400, 200);
+    int logW = 400;
+    int logH = 300;
+    int margin = 20;
+    ofSetColor(10, 10, 10);
+    ofDrawRectangle(0, 0, logW + (2*margin), logH + (2*margin));
+    plotter.draw(margin, margin, logW, logH);
     ofPopStyle();
 }
 
