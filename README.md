@@ -34,6 +34,7 @@ void main()
 
 - [openFrameworks](https://github.com/openframeworks/openFrameworks)
 - [ofxShader](https://github.com/patriciogonzalezvivo/ofxShader)
+- [ofxPlotter](https://github.com/yeswecan/ofxPlotter)
 - [ofxMidi](https://github.com/danomatika/ofxMidi)
 
 ### Enable retina resolution
