@@ -37,7 +37,7 @@ class ofApp : public ofBaseApp{
     bool webcamInUse = false;
     
     int frameRate = 24;
-    int duration = 100; // number of frames a shader is shown. App FPS set in setup greatly affects this.
+    int duration = 500; // number of frames a shader is shown. App FPS set in setup greatly affects this.
     int i = 0; // iterator for for-loop
     int dirCount; // number of directories containing shaders
     

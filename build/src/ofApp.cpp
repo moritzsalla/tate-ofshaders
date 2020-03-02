@@ -22,23 +22,23 @@ void ofApp::setup(){
 void ofApp::update() {
     
     if(webcamInUse) webcam.update();
-    setSingleShader(4);
+    // setSingleShader(4);
     
     // cycle all shaders. comment out for testing individual shaders:
-//    if (ofGetFrameNum()%duration == 0) {
-//        shader.unload();
-//        ofLog() << i;
-//        setShader();
-//
-//        if (!shader.isLoaded()) {
-//            i = 0;
-//            setShader();
-//        }
-//        if(++i == dirCount) {
-//            ofLog() << "Resetting i";
-//            i = 0;
-//        }
-//    }
+    if (ofGetFrameNum()%duration == 0) {
+        shader.unload();
+        ofLog() << i;
+        setShader();
+
+        if (!shader.isLoaded()) {
+            i = 0;
+            setShader();
+        }
+        if(++i == dirCount) {
+            ofLog() << "Resetting i";
+            i = 0;
+        }
+    }
     
     // show fps in window title
     std::stringstream strm;
