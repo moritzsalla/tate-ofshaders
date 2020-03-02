@@ -11,6 +11,7 @@ class ofApp : public ofBaseApp{
     void update();
     void draw();
     void setShader();
+    void setSingleShader(int i);
     
     void keyPressed(int key);
     void keyReleased(int key);

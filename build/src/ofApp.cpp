@@ -22,25 +22,23 @@ void ofApp::setup(){
 void ofApp::update() {
     
     if(webcamInUse) webcam.update();
-    
-    // load individual shader. use for testing individual shaders, comment out for production build:
-    // shader.load("4/shader");
+    setSingleShader(5);
     
     // cycle all shaders. comment out for testing individual shaders:
-    if (ofGetFrameNum()%duration == 0) {
-        shader.unload();
-        ofLog() << i;
-        setShader();
-        
-        if (!shader.isLoaded()) {
-            i = 0;
-            setShader();
-        }
-        if(++i == dirCount) {
-            ofLog() << "Resetting i";
-            i = 0;
-        }
-    }
+//    if (ofGetFrameNum()%duration == 0) {
+//        shader.unload();
+//        ofLog() << i;
+//        setShader();
+//
+//        if (!shader.isLoaded()) {
+//            i = 0;
+//            setShader();
+//        }
+//        if(++i == dirCount) {
+//            ofLog() << "Resetting i";
+//            i = 0;
+//        }
+//    }
     
     // show fps in window title
     std::stringstream strm;
@@ -115,6 +113,18 @@ void ofApp::setShader () {
     shader.load(path);
 }
 
+void ofApp::setSingleShader (int i) {
+    string path = std::to_string(i) + "/shader";
+    
+    if(i == 4) webcamInUse = true;
+    if(i != 4) webcamInUse = false;
+    
+    if (i == 5) sphereInUse = true;
+    if(i != 5) sphereInUse = false;
+    
+    shader.load(path);
+}
+
 //--------------------------------------------------------------
 void ofApp::setupWebcam(){
     camWidth = ofGetWidth();
@@ -159,8 +169,7 @@ void ofApp::mouseReleased(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h){
-    camWidth = w;
-    camHeight = h;
+    setupWebcam();
 }
 
 //--------------------------------------------------------------

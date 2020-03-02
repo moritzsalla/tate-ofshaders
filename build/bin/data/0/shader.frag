@@ -13,7 +13,7 @@ void main()
         
     vec2 p = 1.5 * (2. * gl_FragCoord.xy - resolution) / max(resolution.x, resolution.y);
     
-    for(int i = 1; i < 100; i++)
+    for(int i = 1; i < 20; i++)
     {
           vec2 newp = p;
           float speed = 5.;// speed control
