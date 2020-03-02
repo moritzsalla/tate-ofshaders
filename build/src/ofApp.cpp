@@ -24,7 +24,7 @@ void ofApp::update() {
     if(webcamInUse) webcam.update();
     
     // load individual shader. use for testing individual shaders, comment out for production build:
-    // shader.load("9/shader");
+    // shader.load("4/shader");
     
     // cycle all shaders. comment out for testing individual shaders:
     if (ofGetFrameNum()%duration == 0) {
