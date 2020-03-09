@@ -35,7 +35,7 @@ void main()
 - [openFrameworks](https://github.com/openframeworks/openFrameworks)
 - [ofxShader](https://github.com/patriciogonzalezvivo/ofxShader)
 - [ofxPlotter](https://github.com/yeswecan/ofxPlotter)
-- [ofxMidi](https://github.com/danomatika/ofxMidi) (For Yilin's version)
+- [ofxMidi](https://github.com/danomatika/ofxMidi) (MIDI branch)
 
 ### Enable retina resolution
 Add **High Resolution Capable, YES** to your **openFrameworks-Info.plist** before you compile
