@@ -1,4 +1,4 @@
-# tateShaders
+# Shader Slideshow
 
 Upload your shaders to the **shaders/** directory. If you made a fragment shader then you don't need to upload any vertex shader.
 
